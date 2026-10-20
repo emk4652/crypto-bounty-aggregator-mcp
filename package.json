@@ -1,0 +1,17 @@
+{
+  "name": "crypto-bounty-aggregator-mcp",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Real-time crypto and open-source technical bounty aggregator and MCP server for Apify Store.",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node src/main.js --test"
+  },
+  "dependencies": {
+    "apify": "^3.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "actorSpecification": 1,
+  "name": "crypto-bounty-aggregator-mcp",
+  "title": "Crypto & Open-Source Bounty Aggregator (MCP Ready)",
+  "description": "Real-time aggregator and Model Context Protocol (MCP) tool for paid open-source bounties, Algora tasks, Solana/USDC issues, and Lightning Network rewards across GitHub, Superteam, Gibwork, and Stacker News.",
+  "version": "1.0.0",
+  "minMemoryMbytes": 128,
+  "maxMemoryMbytes": 512,
+  "webServerMcpPath": "/mcp",
+  "input": "./input_schema.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": {
+      "actorSpecification": 1,
+      "title": "Live Crypto & Tech Bounties Dataset",
+      "views": {
+        "overview": {
+          "title": "Active Bounties",
+          "transformation": {
+            "fields": [
+              "title",
+              "rewardAmountUsd",
+              "rewardToken",
+              "sourcePlatform",
+              "repository",
+              "labels",
+              "url",
+              "createdAt"
+            ]
+          },
+          "display": {
+            "component": "table"
+          }
+        }
+      }
+    }
+  }
+}

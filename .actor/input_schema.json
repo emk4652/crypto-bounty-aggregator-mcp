@@ -1,0 +1,46 @@
+{
+  "title": "Crypto Bounty Aggregator & MCP Server Input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "minRewardUsd": {
+      "title": "Minimum Reward (USD Equivalent)",
+      "type": "number",
+      "description": "Filter out bounties below this dollar value threshold.",
+      "default": 50,
+      "minimum": 0
+    },
+    "keywords": {
+      "title": "Tech Stack or Language Keywords",
+      "type": "array",
+      "description": "Optional keywords to filter bounties (e.g., typescript, rust, python, solana, mcp).",
+      "editor": "stringList",
+      "default": []
+    },
+    "maxResults": {
+      "title": "Maximum Bounties to Return",
+      "type": "integer",
+      "description": "Maximum number of verified open bounties to output.",
+      "default": 25,
+      "minimum": 1,
+      "maximum": 100
+    },
+    "includeSources": {
+      "title": "Enabled Bounty Sources",
+      "type": "array",
+      "description": "Platforms to query in real time.",
+      "editor": "stringList",
+      "default": [
+        "github-bounties",
+        "algora",
+        "superteam-gibwork"
+      ]
+    },
+    "standbyMcpServer": {
+      "title": "Run as Standby HTTP MCP Server",
+      "type": "boolean",
+      "description": "When enabled on Apify Standby mode, starts an HTTP JSON-RPC 2.0 MCP endpoint on /mcp for AI agents.",
+      "default": false
+    }
+  }
+}
